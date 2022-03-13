@@ -13,7 +13,7 @@ const {
 const fs = require('fs')
 const moment = require('moment-timezone')
 const { exec } = require('child_process')
-const fetch = require('node-fetch')
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const ffmpeg = require('fluent-ffmpeg')
 /* <==============[ FILE ]===============> */
 const blocked = []
